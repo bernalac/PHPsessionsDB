@@ -18,8 +18,11 @@ if (isset($_POST['login'])) {
         echo '<p class="error">La combinación de la contraseña es errónea</p>';
     } else {
         if (password_verify($password, $result['password'])) {
-            $_SESSION['user_id'] = $result['ID'];
+            $_SESSION['user_id'] = $result['id'];
             echo '<p class="success">Felicidades, estás logueado</p>';
+            
+            echo "<a href=\"val.php\">Hacia la sesion</a>";
+            echo '<br>';
         } else {
             echo '<p class="error">La combinación de la contraseña es errónea o el usuario no existe</p>';
             
